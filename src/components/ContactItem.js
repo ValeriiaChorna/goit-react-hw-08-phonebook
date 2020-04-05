@@ -16,7 +16,7 @@ export default function ContactItem({ name, id, number, onRemoveContact }) {
 
 ContactItem.propTypes = {
   name: T.string.isRequired,
-  id: T.number.isRequired,
+  id: T.string.isRequired,
   number: T.string.isRequired,
   onRemoveContact: T.func.isRequired,
 };

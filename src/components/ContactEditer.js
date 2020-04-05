@@ -21,7 +21,7 @@ class ContactEditer extends Component {
   handleSubmit = e => {
     const { name, number } = this.state;
     e.preventDefault();
-    this.props.onAddContact(name, number);
+    this.props.onAddContact(name, number.toString());
     this.setState({ name: '', number: '' });
   };
 
