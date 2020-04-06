@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import contactsOperations from '../redux/contacts/contactOperations';
-import contactsSelectors from '../redux/contacts/contactsSelectors';
-import ContactItem from './ContactItem';
+import contactsOperations from '../../redux/contacts/contactOperations';
+import contactsSelectors from '../../redux/contacts/contactsSelectors';
+import ContactItem from '.';
 
 const MapStateToProps = (state, ownProps) => {
   const contact = contactsSelectors.getContactById(state, ownProps.id);

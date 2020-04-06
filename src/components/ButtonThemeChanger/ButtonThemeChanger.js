@@ -1,5 +1,5 @@
 import React from 'react';
-import withTheme from '../hoc/withTheme';
+import withTheme from '../../hoc/withTheme';
 import T from 'prop-types';
 
 const Button = ({ theme }) => (

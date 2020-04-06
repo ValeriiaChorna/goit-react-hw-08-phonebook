@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import contactOperations from '../redux/contacts/contactOperations';
+import contactOperations from '../../redux/contacts/contactOperations';
 import T from 'prop-types';
 
 class ContactEditer extends Component {
