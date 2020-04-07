@@ -1,42 +1,28 @@
 .Layout-light {
-  max-width: 1170px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px;
+  padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
-  background-color: whitesmoke;
+  background-color: #f3f3f3;
+  box-sizing: border-box;
 }
 
 .Layout-dark {
-  max-width: 1170px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px;
+  padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   background-color: black;
-}
-
-.contactEdit {
-  width: 250px;
-  border: 1px solid;
-  display: flex;
-  padding: 10px;
-}
-
-.contactEdit > p {
-  text-align: left;
-}
-
-.submit {
-  display: block;
-  background-color: skyblue;
+  box-sizing: border-box;
 }
 
 button {
   font-size: 8px;
-  margin: 5px;
+  padding: 5px;
   border-radius: 5px;
 }
 
@@ -50,26 +36,14 @@ button {
   background-color: whitesmoke;
 }
 
-.contactList {
-  display: flex;
-  width: 200px;
-  align-items: center;
-  justify-content: space-between;
+input {
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%;
 }
 
-.contactEdit-light {
-  color: black;
-  background-color: whitesmoke;
-}
-
-.contactEdit-dark {
-  color: white;
-  background-color: black;
-}
-
-.deleteButton {
-  color: red;
-  height: 100%;
+input:focus {
+  border: 2px solid #1976d2;
 }
 
 .light {

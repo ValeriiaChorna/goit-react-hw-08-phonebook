@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './Layout';
+import Logo from './Logo';
 import ContactEditer from './ContactEditer';
 import ContactList from './ContactList';
 import Filter from './Filter';
@@ -10,15 +11,11 @@ import Notification from './Notification';
 export default function App({ errorContacts, isLoadingContacts }) {
   return (
     <Layout>
-      <p>Change theme</p>
+      <Logo />
       <ButtonThemeChanger />
-      <h1>Phonebook</h1>
 
-      <h2>Create new contact</h2>
       <ContactEditer />
 
-      <h2>Contact</h2>
-      <h3>Find contact by name</h3>
       <Filter />
 
       {isLoadingContacts && <Spiner />}

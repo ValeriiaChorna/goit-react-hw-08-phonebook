@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import contactOperations from '../../redux/contacts/contactOperations';
 import T from 'prop-types';
+import './ContactEditer.css';
 
 class ContactEditer extends Component {
   static propTypes = {
@@ -29,8 +30,9 @@ class ContactEditer extends Component {
     const { name, number } = this.state;
 
     return (
-      <div className="contactEdit">
-        <form onSubmit={this.handleSubmit}>
+      <div className="contactEditer">
+        <h2>Create new contact</h2>
+        <form onSubmit={this.handleSubmit} className="contactEdit-form">
           <label>
             <p>Name</p>
             <input

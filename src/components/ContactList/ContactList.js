@@ -3,10 +3,11 @@ import T from 'prop-types';
 import { connect } from 'react-redux';
 import ContactItem from '../ContactItem/ContactListItemContainer';
 import contactsSelectors from '../../redux/contacts/contactsSelectors';
+import './ContactList.css';
 
 function ContactList({ contacts }) {
   return (
-    <ul>
+    <ul className="contactList">
       {contacts.map(({ id }) => (
         <ContactItem key={id} id={id} />
       ))}

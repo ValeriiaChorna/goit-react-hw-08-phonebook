@@ -1,9 +1,10 @@
 import React from 'react';
 import T from 'prop-types';
+import './ContactItem.css';
 
 export default function ContactItem({ name, id, number, onRemoveContact }) {
   return (
-    <li key={id} className="contactList">
+    <li key={id} className="contactListItem">
       <p>
         {name}: {number}
       </p>
