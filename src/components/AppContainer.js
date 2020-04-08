@@ -21,6 +21,7 @@ class AppContainer extends Component {
 const MapStateToProps = state => ({
   isLoadingContacts: contactsSelectors.getLoading(state),
   errorContacts: contactsSelectors.getError(state),
+  contacts: contactsSelectors.getContacts(state),
 });
 
 const mapDispatchToProps = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import withTheme from '../../hoc/withTheme';
 import T from 'prop-types';
+import './ButtonThemeChanger.css';
 
 const Button = ({ theme }) => (
   <button

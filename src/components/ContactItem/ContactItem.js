@@ -5,11 +5,15 @@ import './ContactItem.css';
 export default function ContactItem({ name, id, number, onRemoveContact }) {
   return (
     <li key={id} className="contactListItem">
-      <p>
-        {name}: {number}
-      </p>
+      <span className="contactItem-span">{name}</span>
+      <span className="contactItem-span">{number}</span>
       <button className="deleteButton" type="button" onClick={onRemoveContact}>
-        Delete
+        <img
+          className="cancel"
+          alt="cancel"
+          width="25"
+          src="https://img.icons8.com/color/48/000000/close-window.png"
+        />
       </button>
     </li>
   );

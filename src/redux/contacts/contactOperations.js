@@ -6,22 +6,16 @@ const AUTH_TOKEN =
   'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZThhM2Q3ODIxN2MyMTAwMTcxZDY2NzYiLCJpYXQiOjE1ODYxMTgwMDh9.Xz0H87RZq1S-qmyQKwOWAjo2GuDPwV4tDPaAaK0PJm4';
 axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
-// 'https://goit-phonebook-api.herokuapp.com'
-// {
-//   "user": {
-//       "name": "Valeriia1",
-//       "email": "valeriia@mail.com"
-//   },
-//   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZThhM2Q3ODIxN2MyMTAwMTcxZDY2NzYiLCJpYXQiOjE1ODYxMTgwMDh9.Xz0H87RZq1S-qmyQKwOWAjo2GuDPwV4tDPaAaK0PJm4"
-// }
-
 const addContact = (name, number) => (dispatch, getState) => {
   const doesExistContact = getState().contacts.items.some(
     contact => contact.name === name,
   );
   if (doesExistContact) {
-    alert(`${name} is allready exist in contacts.`);
-    return;
+    const error = {
+      massage: `${name} is allready exist!`,
+    };
+    // alert(`${name} is allready exist in contacts.`);
+    return dispatch(contactActions.addContactErrorExisted(error));
   }
   dispatch(contactActions.addContactRequest());
   axios

@@ -1,0 +1,11 @@
+.btn-dark {
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.btn-light {
+  color: black;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}

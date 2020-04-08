@@ -7,18 +7,29 @@ import Filter from './Filter';
 import ButtonThemeChanger from './ButtonThemeChanger';
 import Spiner from './Spiner';
 import Notification from './Notification';
+import { CSSTransition } from 'react-transition-group';
 
-export default function App({ errorContacts, isLoadingContacts }) {
+export default function App({ errorContacts, isLoadingContacts, contacts }) {
   return (
     <Layout>
-      <Logo />
-      <ButtonThemeChanger />
+      <div className="header">
+        <Logo />
+        <ButtonThemeChanger />
+      </div>
 
       <ContactEditer />
 
-      <Filter />
+      <CSSTransition
+        in={contacts.length > 1}
+        timeout={250}
+        classNames="filter-fade"
+        unmountOnExit
+      >
+        <Filter />
+      </CSSTransition>
 
-      {isLoadingContacts && <Spiner />}
+      <div className="spiner"> {isLoadingContacts && <Spiner />}</div>
+
       {errorContacts && (
         <Notification
           message={`Whoops, something went wrong: ${errorContacts}`}

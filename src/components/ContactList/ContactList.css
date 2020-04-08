@@ -1,6 +1,20 @@
 .contactList {
   width: 100%;
-  padding: 5px;
+  padding: 0px;
   box-sizing: inherit;
   font-size: small;
+}
+.contactList-Items-fade-enter {
+  transform: translateX(-100%);
+}
+.contactList-Items-fade-enter-active {
+  transform: translateX(0);
+  transition: all 250ms linear;
+}
+.contactList-Items-fade-exit {
+  transform: translateX(0);
+}
+.contactList-Items-fade-exit-active {
+  transform: translateX(-100%);
+  transition: all 250ms linear;
 }

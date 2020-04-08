@@ -5,7 +5,7 @@
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
-  background-color: #f3f3f3;
+  background-color: #fafafa;
   box-sizing: border-box;
 }
 
@@ -23,21 +23,12 @@
 button {
   font-size: 8px;
   padding: 5px;
-  border-radius: 5px;
-}
-
-.btn-dark {
-  color: white;
-  background-color: black;
-}
-
-.btn-light {
-  color: black;
-  background-color: whitesmoke;
 }
 
 input {
   box-sizing: border-box;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 3px;
   height: 30px;
   width: 100%;
 }
@@ -54,4 +45,35 @@ input:focus {
 .dark {
   color: white;
   background-color: black;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.spiner {
+  text-align: center;
+}
+
+.filter-fade-enter {
+  opacity: 0;
+  transform: scale(0.1);
+}
+.filter-fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 250ms linear;
+}
+.filter-fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.filter-fade-exit-active {
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 250ms linear;
 }

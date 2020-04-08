@@ -32,6 +32,7 @@ const loading = createReducer(false, {
 const error = createReducer(null, {
   [contactsActions.fetchContactsError]: error => error.massage,
   [contactsActions.addContactError]: error => error.massage,
+  [contactsActions.addContactErrorExisted]: error => error.massage,
 });
 
 export default combineReducers({
