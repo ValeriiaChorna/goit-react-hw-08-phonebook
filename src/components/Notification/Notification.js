@@ -1,5 +1,16 @@
 import React from 'react';
+import T from 'prop-types';
 
-export default function Notification(message) {
-  return <div>{message}</div>;
+function Notification({ message }) {
+  return (
+    <div className="notification">
+      <p>{message}</p>
+    </div>
+  );
 }
+
+Notification.prototype = {
+  message: T.string,
+};
+
+export default Notification;

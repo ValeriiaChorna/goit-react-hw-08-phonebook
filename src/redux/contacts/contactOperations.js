@@ -11,11 +11,7 @@ const addContact = (name, number) => (dispatch, getState) => {
     contact => contact.name === name,
   );
   if (doesExistContact) {
-    const error = {
-      massage: `${name} is allready exist!`,
-    };
-    // alert(`${name} is allready exist in contacts.`);
-    return dispatch(contactActions.addContactErrorExisted(error));
+    return dispatch(contactActions.addContactErrorExisted(name));
   }
   dispatch(contactActions.addContactRequest());
   axios
@@ -24,6 +20,10 @@ const addContact = (name, number) => (dispatch, getState) => {
       dispatch(contactActions.addContactSuccess(response.data));
     })
     .catch(error => dispatch(contactActions.addContactError(error)));
+};
+
+const clearDoesExistContact = () => dispatch => {
+  dispatch(contactActions.addContactErrorExisted(''));
 };
 
 const fetchContacts = () => dispatch => {
@@ -51,4 +51,5 @@ export default {
   addContact,
   fetchContacts,
   removeContact,
+  clearDoesExistContact,
 };

@@ -32,12 +32,16 @@ const loading = createReducer(false, {
 const error = createReducer(null, {
   [contactsActions.fetchContactsError]: error => error.massage,
   [contactsActions.addContactError]: error => error.massage,
-  [contactsActions.addContactErrorExisted]: error => error.massage,
+});
+
+const errorContactExisted = createReducer('', {
+  [contactsActions.addContactErrorExisted]: (_, action) => action.payload,
 });
 
 export default combineReducers({
   items: itemsReducer,
   filter: filterReducer,
+  errorContactExisted,
   loading,
   error,
 });

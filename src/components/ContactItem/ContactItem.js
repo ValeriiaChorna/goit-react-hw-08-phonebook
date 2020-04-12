@@ -1,6 +1,7 @@
 import React from 'react';
 import T from 'prop-types';
 import './ContactItem.css';
+// import formatPhone from '../../utils/phoneFormatter';
 
 export default function ContactItem({ name, id, number, onRemoveContact }) {
   return (

@@ -22,10 +22,12 @@ const MapStateToProps = state => ({
   isLoadingContacts: contactsSelectors.getLoading(state),
   errorContacts: contactsSelectors.getError(state),
   contacts: contactsSelectors.getContacts(state),
+  errorContactExisted: contactsSelectors.getErrorContactExisted(state),
 });
 
 const mapDispatchToProps = {
   onFetchContacts: contactOperations.fetchContacts,
+  onHideAlert: contactOperations.clearDoesExistContact,
 };
 
 export default connect(MapStateToProps, mapDispatchToProps)(AppContainer);

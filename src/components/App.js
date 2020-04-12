@@ -9,12 +9,28 @@ import Spiner from './Spiner';
 import Notification from './Notification';
 import { CSSTransition } from 'react-transition-group';
 
-export default function App({ errorContacts, isLoadingContacts, contacts }) {
+export default function App({
+  errorContacts,
+  isLoadingContacts,
+  errorContactExisted,
+  contacts,
+  onHideAlert,
+}) {
+  let showAlert = errorContactExisted.length > 0;
   return (
     <Layout>
       <div className="header">
         <Logo />
         <ButtonThemeChanger />
+        <CSSTransition
+          in={showAlert}
+          timeout={500}
+          classNames="notification-fade"
+          onEnter={() => setTimeout(onHideAlert, 2000)}
+          unmountOnExit
+        >
+          <Notification message={`${errorContactExisted} is already exist!`} />
+        </CSSTransition>
       </div>
 
       <ContactEditer />
